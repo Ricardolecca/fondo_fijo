@@ -1,0 +1,19 @@
+<nav class="navbar navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+        <span class="navbar-brand">
+            💰 Fondo Fijo
+        </span>
+
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+
+            <button type="submit" class="btn btn-danger">
+                Salir
+            </button>
+        </form>
+
+    </div>
+
+</nav>

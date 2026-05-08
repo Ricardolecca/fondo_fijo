@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<div class="row text-center mb-4">
+
+    <div class="col-md-4">
+        <div class="alert alert-success">
+            Ingresos: S/ {{ ingresos }}
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="alert alert-danger">
+            Gastos: S/ {{ gastos }}
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="alert alert-primary">
+            Saldo: S/ {{ saldo }}
+        </div>
+    </div>
+
+</div>
+
+<div class="alert alert-info">
+
+    % Gastado:
+    {{ porcentaje_gasto|floatformat:2 }}%
+
+</div>
+
+<a href="{% url 'movimientos' %}" class="btn btn-primary mb-3">
+    Nuevo Movimiento
+</a>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Tipo</th>
+            <th>Categoría</th>
+            <th>Descripción</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for m in movimientos %}
+
+        <tr>
+
+            <td>{{ m.fecha }}</td>
+
+            <td>{{ m.tipo }}</td>
+
+            <td>{{ m.categoria }}</td>
+
+            <td>{{ m.descripcion }}</td>
+
+            <td>S/ {{ m.valor }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+{% endblock %}
