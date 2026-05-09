@@ -8,19 +8,19 @@
 
     <div class="col-md-4">
         <div class="alert alert-success">
-            Ingresos: S/ {{ ingresos }}
+            Ingresos: S/ {{ ingresos|floatformat:2 }}
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="alert alert-danger">
-            Gastos: S/ {{ gastos }}
+            Gastos: S/ {{ gastos|floatformat:2 }}
         </div>
     </div>
 
     <div class="col-md-4">
         <div class="alert alert-primary">
-            Saldo: S/ {{ saldo }}
+            Saldo: S/ {{ saldo|floatformat:2 }}
         </div>
     </div>
 
@@ -63,7 +63,7 @@
 
             <td>{{ m.descripcion }}</td>
 
-            <td>S/ {{ m.valor }}</td>
+            <td>S/ {{ m.valor|floatformat:2 }}</td>
 
         </tr>
 
